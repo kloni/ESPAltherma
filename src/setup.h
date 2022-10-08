@@ -21,6 +21,11 @@
 //Values used when **M5StickC** or **M5STickCPlus** environment is selected:
 #define RX_PIN    36// Pin connected to the TX pin of X10A 
 #define TX_PIN    26// Pin connected to the RX pin of X10A
+#elif defined(ARDUINO_M5Stamp_C3U)
+//Values used when **M5StampC3U** environment is selected
+//https://docs.m5stack.com/en/core/stamp_c3u
+#define RX_PIN    0// Pin connected to the TX pin of X10A
+#define TX_PIN    1// Pin connected to the RX pin of X10A
 #else 
 //Default GPIO PINs for Serial2:
 #define RX_PIN    16// Pin connected to the TX pin of X10A 
