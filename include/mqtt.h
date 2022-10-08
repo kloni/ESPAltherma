@@ -17,7 +17,13 @@ char jsonbuff[MAX_MSG_SIZE] = "[{\0";
 char jsonbuff[MAX_MSG_SIZE] = "{\0";
 #endif
 
+#ifdef MQTT_TLS_X509
+#include <WiFiClientSecure.h>
+WiFiClientSecure espClient;
+#else
 WiFiClient espClient;
+#endif
+
 PubSubClient client(espClient);
 
 void sendValues()
@@ -69,6 +75,16 @@ void reconnectMqtt()
   while (!client.connected())
   {
     Serial.print("Attempting MQTT connection...");
+
+#ifdef MQTT_TLS_X509
+    Serial.print("TLS...");
+#ifdef MQTT_X509_CLIENTCERT
+    Serial.print("X509...");
+    espClient.setCACert(MQTT_X509_CACERT);
+    espClient.setPrivateKey(MQTT_X509_CLIENTKEY);
+    espClient.setCertificate(MQTT_X509_CLIENTCERT);
+#endif
+#endif
 
     if (client.connect("ESPAltherma-dev", MQTT_USERNAME, MQTT_PASSWORD, MQTT_lwt, 0, true, "Offline"))
     {
