@@ -9,3 +9,7 @@ private/
 contrib/ldd_decoder/bin/
 contrib/ldd_decoder/obj/
 contrib/ldd_decoder/label_defines.*
+.idea
+cmake-build-*
+CMakeLists.txt
+CMakeListsPrivate.txt
