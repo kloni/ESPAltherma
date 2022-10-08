@@ -1,3 +1,8 @@
+#ifdef ESPALTHERMA_CUSTOM_CONFIG
+#include "custom_config.h"
+#endif //ifdef ESPALTHERMA_CUSTOM_CONFIG
+
+#ifndef ESPALTHERMA_CUSTOM_CONFIG
 //Setup your credentials and mqtt info here:
 //only change the value between the " " leave the rest of the line untouched.
 #define WIFI_SSID "SSID"//**Your SSID here**
@@ -23,6 +28,8 @@
 #ifdef MQTT_TLS_X509
 #include "x509_certificates.h"
 #endif
+
+#endif //ifndef ESPALTHERMA_CUSTOM_CONFIG
 
 #define FREQUENCY 30000 //query values every 30 sec
 
@@ -70,7 +77,7 @@
 // #define ONEVAL_ONETOPIC
 // #define MQTT_OneTopic "espaltherma/OneATTR/" //Keep the ending "/" !!
 
-
+#ifndef LABELDEF
 //Uncomment *ONE* of the following according to your installation.
 //Then, open and edit the selected file in the /include/def/ folder and uncomment each values you are interested in.
 
@@ -104,6 +111,8 @@
 //#include "def/PROTOCOL_S_ROTEX.h"
 //#include "def/PROTOCOL_S.h"
 //#include "def/DEFAULT.h"
+
+#endif
 
 #ifndef LABELDEF
 #warning "NO DEFINITION SELECTED: Please select your heat pump definition in /src/setup.h -- Using default."
