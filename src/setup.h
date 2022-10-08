@@ -15,6 +15,15 @@
 #define MQTT_PASSWORD ""//leave empty if not set (bad!)
 #define MQTT_PORT 1883
 
+//Secure communication for MQTT using client certificate authentication
+//When enabling this, you need to add a x509_certificates.h header file to define MQTT_X509_CACERT, MQTT_X509_CLIENTKEY
+//and MQTT_X509_CLIENTCERT. See x509_certificates.h.sample
+//set MQTT_PORT accordingly - default: 8883
+//#define MQTT_TLS_X509
+#ifdef MQTT_TLS_X509
+#include "x509_certificates.h"
+#endif
+
 #define FREQUENCY 30000 //query values every 30 sec
 
 #if defined(ARDUINO_M5Stick_C) || defined(ARDUINO_M5Stick_C_Plus)

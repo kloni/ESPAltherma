@@ -1,0 +1,30 @@
+// See https://arduino.stackexchange.com/questions/68502/impossible-to-connect-esp32-with-mosquitto-on-raspberry-using-certificates
+// Replace the samples with your certificates and key. Mind the '\n\' at the end of the lines.
+// Copy/rename this file to x509_certificates.h
+
+#define MQTT_X509_CACERT "\
+-----BEGIN CERTIFICATE-----\n\
+MIIDhzCCAvCgAwIBAgIJANoN6RLOJhj7MA0GCSqGSIb3DQEBBQUAMIGKMQswCQYD\n\
+VQQGEwJMSzEQMA4GA1UECBMHV2VzdGVybjEQMA4GA1UEBxMHQ29sb21ibzEWMBQG\n\
+...\n\
+fXRHGaDVtAeHH0FkFiifZiVpOZkidsTkD+UKAUzYo1uo8AvfG1dx6JzccSNnWIvf\n\
+2I/YrWMHefx4KdyCt/DtRqnOHooRm18Gnqs6dZ/FHKOu1HDCRjD2kTccTw==\n\
+-----END CERTIFICATE-----"
+
+#define MQTT_X509_CLIENTKEY "\
+-----BEGIN RSA PRIVATE KEY-----\n\
+MIIDhzCCAvCgAwIBAgIJANoN6RLOJhj7MA0GCSqGSIb3DQEBBQUAMIGKMQswCQYD\n\
+VQQGEwJMSzEQMA4GA1UECBMHV2VzdGVybjEQMA4GA1UEBxMHQ29sb21ibzEWMBQG\n\
+...\n\
+fXRHGaDVtAeHH0FkFiifZiVpOZkidsTkD+UKAUzYo1uo8AvfG1dx6JzccSNnWIvf\n\
+2I/YrWMHefx4KdyCt/DtRqnOHooRm18Gnqs6dZ/FHKOu1HDCRjD2kTccTw==\n\
+-----END RSA PRIVATE KEY-----"
+
+#define MQTT_X509_CLIENTCERT "\
+-----BEGIN CERTIFICATE-----\n\
+MIIDhzCCAvCgAwIBAgIJANoN6RLOJhj7MA0GCSqGSIb3DQEBBQUAMIGKMQswCQYD\n\
+VQQGEwJMSzEQMA4GA1UECBMHV2VzdGVybjEQMA4GA1UEBxMHQ29sb21ibzEWMBQG\n\
+...\n\
+fXRHGaDVtAeHH0FkFiifZiVpOZkidsTkD+UKAUzYo1uo8AvfG1dx6JzccSNnWIvf\n\
+2I/YrWMHefx4KdyCt/DtRqnOHooRm18Gnqs6dZ/FHKOu1HDCRjD2kTccTw==\n\
+-----END CERTIFICATE-----"
