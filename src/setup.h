@@ -1,5 +1,5 @@
 #ifdef ESPALTHERMA_CUSTOM_CONFIG
-#include "custom_config.h"
+#include "my_setup.h"
 #endif //ifdef ESPALTHERMA_CUSTOM_CONFIG
 
 #ifndef ESPALTHERMA_CUSTOM_CONFIG
