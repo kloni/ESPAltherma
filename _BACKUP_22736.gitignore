@@ -9,5 +9,9 @@ private/
 contrib/ldd_decoder/bin/
 contrib/ldd_decoder/obj/
 contrib/ldd_decoder/label_defines.*
+<<<<<<< HEAD
 src/my_setup.h
+=======
+>>>>>>> e0b7db4ea8a6ba74dd18020ea6ddf228d50f9d97
 src/x509_certificates.h
+src/custom_config.h
