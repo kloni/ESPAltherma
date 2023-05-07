@@ -35,7 +35,7 @@
 
 #if defined(ARDUINO_M5Stick_C) || defined(ARDUINO_M5Stick_C_Plus)
 //Values used when **M5StickC** or **M5STickCPlus** environment is selected:
-#define RX_PIN    36// Pin connected to the TX pin of X10A 
+#define RX_PIN    36// Pin connected to the TX pin of X10A
 #define TX_PIN    26// Pin connected to the RX pin of X10A
 #elif defined(ARDUINO_M5Stamp_C3U)
 //Values used when **M5StampC3U** environment is selected

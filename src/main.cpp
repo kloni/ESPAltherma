@@ -146,6 +146,7 @@ void setup_wifi()
   WiFi.setSortMethod(WIFI_CONNECT_AP_BY_SIGNAL);
   WiFi.begin(WIFI_SSID, WIFI_PWD);
   checkWifi();
+  WiFi.setHostname(ESP_HOSTNAME);
   mqttSerial.printf("Connected. IP Address: %s\n", WiFi.localIP().toString().c_str());
 }
 
@@ -220,7 +221,7 @@ void setup()
   readEEPROM();//Restore previous state
   mqttSerial.print("Setting up wifi...");
   setup_wifi();
-  ArduinoOTA.setHostname("ESPAltherma");
+  ArduinoOTA.setHostname(ESP_HOSTNAME);
   ArduinoOTA.onStart([]() {
     busy = true;
   });
